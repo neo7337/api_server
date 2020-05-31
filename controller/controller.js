@@ -49,3 +49,7 @@ exports.listCountries = (req, res) => {
         return res.json(err);
     })
 }
+
+exports.pingHealth = (req, res) => {
+    return res.status(200).send();
+}
