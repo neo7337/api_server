@@ -1,6 +1,18 @@
 # API SERVER in GOLANG
 
-<b>Commands</b>
+<b>Go Commands</b>
+
+The below command will generate the golang executable build for linux platforms if your current system is linux
+```
+go build server.go
+```
+
+Once the build is generated we can run that build directly using below command
+```
+./server
+```
+
+<b>Docker Commands</b>
 
 ```
 docker build -t "<IMAGE_NAME>:<VERSION>" .
@@ -14,11 +26,13 @@ docker push gcr.io/<PROJECT_ID>/<IMAGE_NAME>:latest
 ```
 docker run --publish 5000:8989 --name server <IMAGE_NAME>:<VERSION>
 ```
-//Kill a running container
+Kill a running container
 ```
 docker rm --force server
 ```
 After pushing the image to Google Container Registry, we can deploy it on VM Instances, Google Kubernetes Engine, Google App Engine
+
+<b>Testing the server</b>
 
 Basic server test curl command on localhost:
 ```
