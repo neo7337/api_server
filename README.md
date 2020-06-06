@@ -1,4 +1,4 @@
-# API SERVER
+# API SERVER in GOLANG
 
 <b>Commands</b>
 
@@ -20,3 +20,7 @@ docker rm --force server
 ```
 After pushing the image to Google Container Registry, we can deploy it on VM Instances, Google Kubernetes Engine, Google App Engine
 
+Basic server test curl command on localhost:
+```
+curl --head localhost:8989
+```

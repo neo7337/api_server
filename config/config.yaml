@@ -1,0 +1,7 @@
+countriesHost : covid19.mathdro.id/
+countriesPath : api/countries
+localeHost : api.rootnet.in/
+localePath : covid19-in/stats/latest
+indHost : api.covid19india.org/
+districtIndPath : v2/state_district_wise.json
+historicalINDPath : data.json
