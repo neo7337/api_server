@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
@@ -27,5 +28,6 @@ func (c *Conf) ReadConf() *Conf {
 	if err != nil {
 		log.Fatalf("Unmarshal: %v", err)
 	}
+	fmt.Println("Configs loaded successfully")
 	return c
 }

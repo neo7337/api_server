@@ -15,11 +15,10 @@ func main() {
 	//loading global configs
 	var configs config.Conf
 	configs.ReadConf()
-	fmt.Println("Reading Configs", configs.CountriesHost)
 
 	//server routes
 	http.HandleFunc("/", handler.ServerStatus())
-	//http.HandlerFunc("/api/v1/listCountries", handler.CountriesList(c.CountriesHost, c.CountriesPath))
+	http.HandleFunc("/api/v1/listCountries", handler.CountriesList(configs.CountriesHost, configs.CountriesPath))
 
 	server := &http.Server{
 		Addr:         ":8989",
