@@ -6,13 +6,10 @@ import (
 	"net/http"
 )
 
-var count = 0
-
 //ServerStatus -> Function that return the live status
 func ServerStatus() func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		count++
-		fmt.Println("Server request for endpoint /", count)
+		fmt.Println("Server Health Check")
 		w.WriteHeader(http.StatusOK)
 	}
 }
