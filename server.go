@@ -15,7 +15,7 @@ func main() {
 	//loading global configs
 	var configs config.Conf
 	configs.ReadConf()
-	fmt.Println("Reading Configs", configs)
+	fmt.Println("Reading Configs", configs.CountriesHost)
 
 	//server routes
 	http.HandleFunc("/", handler.ServerStatus())
