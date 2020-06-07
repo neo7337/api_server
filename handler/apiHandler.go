@@ -14,10 +14,10 @@ func ServerStatus() func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-//CountriesList -> Function returns the list of ISO standard countries
-func CountriesList(host string, path string) func(w http.ResponseWriter, r *http.Request) {
+//RestHandler -> Generic handler for the rest calls in the server
+func RestHandler(host string, path string) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("Fetching List of Countries")
+		fmt.Println("Fetching Data")
 		uri := "https://" + host + path
 		response, err := http.Get(uri)
 		if err != nil {

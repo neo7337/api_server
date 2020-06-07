@@ -1,19 +1,19 @@
-FROM node:10-alpine
+FROM golang:1.14.2 AS build-env
 
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+ENV GO111MODULE=on
 
-WORKDIR /home/node/app
+ADD . /apiserver
 
-COPY package*.json ./
-
-USER node
-
-RUN npm install
-
-COPY --chown=node:node . .
+WORKDIR /apiserver
 
 RUN ls -lrt
 
+RUN go mod download
+
+COPY . .
+
+RUN go build server.go
+
 EXPOSE 8989
 
-CMD ["npm", "run", "server"]
+CMD ["./server"]
