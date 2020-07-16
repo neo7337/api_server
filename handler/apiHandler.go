@@ -9,7 +9,7 @@ import (
 //ServerStatus -> Function that return the live status
 func ServerStatus() func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("Server Health Check")
+		fmt.Println("Ping Server Test")
 		w.WriteHeader(http.StatusOK)
 	}
 }
