@@ -38,3 +38,18 @@ Basic server test curl command on localhost:
 ```
 curl --head localhost:8989
 ```
+
+<b>Kubernetes Commands</b>
+
+Deploying Deployment Server
+```
+kubectl apply -f kubernetes/deployments/server.yaml
+kubectl describe deployment server-deployment
+```
+
+Deploying Service
+```
+kubectl apply -f kubernetes/services/server.yaml
+kubectl describe service server-deployment
+minikube service server-deployment --url
+```
